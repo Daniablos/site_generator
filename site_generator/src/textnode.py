@@ -4,6 +4,12 @@ from enum import Enum
 
 
 class TextType(Enum):
+    """
+    Enumeration that provides a type-safe and highly readable way to categorize
+    different forms or styles of text content, essential for applications dealing
+    with rich text or content processing.
+    """
+
     TEXT = "text"
     BOLD = "bold"
     ITALIC = "italic"
@@ -13,6 +19,11 @@ class TextType(Enum):
 
 
 class TextNode:
+    """
+    Data structure for breaking down and representing rich text content into discrete,
+    typed pieces, making it easier to process, transform, and render.        
+    """
+
     def __init__(self, text: str, text_type: TextType, url: str = None):
         self.text = text
         self.text_type = text_type
