@@ -1,0 +1,1 @@
+python3 site_generator/src/main.py
