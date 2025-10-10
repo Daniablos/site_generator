@@ -1,1 +1,1 @@
-python3 -m unittest discover -s site_generator/src
+pytest -s site_generator/src
