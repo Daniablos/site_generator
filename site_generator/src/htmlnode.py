@@ -11,7 +11,7 @@ class HTMLNode:
         tag: str = None,
         value: str = None,
         children: list[HTMLNode] = None,
-        props: dict = None,
+        props: dict[str: str] = None,
     ):
         self.tag = tag
         """A string representing the HTML tag name (e.g. "p", "a", "h1", etc.)"""
@@ -38,10 +38,10 @@ class HTMLNode:
         #It then joins all these attribute strings with a space, and prefixes the entire result with an additional space.
         return " " + " ".join(html_attributes)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"HTMLNode({self.tag}, {self.value}, {self.children}, {self.props})"
 
-    def __eq__(self, value: HTMLNode):
+    def __eq__(self, value: HTMLNode) -> bool:
         return (
             self.tag == value.tag
             and self.value == value.value
