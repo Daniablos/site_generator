@@ -1,1 +1,1 @@
-pytest -s site_generator/src
+poetry run pytest

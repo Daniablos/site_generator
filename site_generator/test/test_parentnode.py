@@ -1,7 +1,6 @@
 import pytest
 
-from parentnode import ParentNode
-from leafnode import LeafNode
+from site_generator import ParentNode, LeafNode
 
 def test_to_html_with_children():
     child_node = LeafNode("span", "child")

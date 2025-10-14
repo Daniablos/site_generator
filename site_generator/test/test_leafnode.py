@@ -1,5 +1,5 @@
 import pytest
-from leafnode import LeafNode
+from site_generator import LeafNode
 
 
 def test_to_html():
