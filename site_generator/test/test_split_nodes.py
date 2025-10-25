@@ -1,5 +1,5 @@
 import pytest
-from site_generator import TextNode, TextType, split_nodes_delimiter, split_nodes_image, split_nodes_link
+from site_generator import TextNode, TextType, split_nodes_delimiter, split_nodes_image, split_nodes_link, text_to_textnode
 
 def test_codetype():
     node = TextNode("text `code` text", TextType.TEXT)
@@ -203,8 +203,8 @@ def test_link():
     
 
 def test_multiple():
-    node = TextNode("![alt text](img url) text [link text](url) **bold** text _italic_ `code`text![img](url)", TextType.TEXT)
-    nodes = split_nodes_link(split_nodes_image(split_nodes_delimiter(split_nodes_delimiter(split_nodes_delimiter([node], "`", TextType.CODE), "**", TextType.BOLD), "_", TextType.ITALIC)))
+    text = "![alt text](img url) text [link text](url) **bold** text _italic_ `code`text![img](url)"
+    nodes = text_to_textnode(text)
     assert nodes == [
         TextNode("alt text", TextType.IMAGE, "img url"),
         TextNode(" text ", TextType.TEXT),
