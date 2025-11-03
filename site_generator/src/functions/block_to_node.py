@@ -52,6 +52,6 @@ def ol_block_to_node(block: str) -> ParentNode:
     children = []
     lines = block.split("\n")
     for line in lines:
-        text = line.split(" ", 1)[1] #Берется линия без тэга листа
+        text = line.split(" ", 1)[1] #Отделение нумерации от текста
         children.append(ParentNode("li", text_to_children(text)))
     return ParentNode("ol", children)
