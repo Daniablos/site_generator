@@ -15,24 +15,27 @@ def test_heading():
     assert block_to_block_type(block) == BlockType.PARAGRAPH
 
     block = "# h1"
-    assert block_to_block_type(block) == BlockType.HEADING
+    assert block_to_block_type(block) == BlockType.HEADING1
 
     block = "## h2"
-    assert block_to_block_type(block) == BlockType.HEADING
+    assert block_to_block_type(block) == BlockType.HEADING2
 
     block = "### h3"
-    assert block_to_block_type(block) == BlockType.HEADING
+    assert block_to_block_type(block) == BlockType.HEADING3
 
     block = "#### h4"
-    assert block_to_block_type(block) == BlockType.HEADING
+    assert block_to_block_type(block) == BlockType.HEADING4
 
     block = "##### h5"
-    assert block_to_block_type(block) == BlockType.HEADING
+    assert block_to_block_type(block) == BlockType.HEADING5
 
     block = "###### h6"
-    assert block_to_block_type(block) == BlockType.HEADING
+    assert block_to_block_type(block) == BlockType.HEADING6
 
     block = "####### h7"
+    assert block_to_block_type(block) == BlockType.PARAGRAPH
+
+    block = "####### "
     assert block_to_block_type(block) == BlockType.PARAGRAPH
 
 def test_code():
@@ -109,7 +112,7 @@ def test_ordered_list():
 3. 2
 3. 3"""
     assert block_to_block_type(block) == BlockType.PARAGRAPH
-    
+
 
 
 

@@ -1,4 +1,3 @@
-from .leafnode import LeafNode
 from .htmlnode import HTMLNode
 
 class ParentNode(HTMLNode):
@@ -6,7 +5,7 @@ class ParentNode(HTMLNode):
     The ParentNode class is a specialized child class of HTMLNode designed to represent HTML elements that contain other HTML nodes as children.
     It's intended for structural HTML elements like div, ul, body, h1, etc., which typically wrap other content rather than holding direct textual value themselves.
     """
-    def __init__(self, tag: str, children: list[LeafNode], props: dict[str: str] = None):
+    def __init__(self, tag: str, children: list[HTMLNode], props: dict[str: str] = None):
         super().__init__(tag, None, children, props)
 
     def to_html(self) -> str:
