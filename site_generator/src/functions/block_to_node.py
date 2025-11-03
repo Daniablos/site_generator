@@ -5,7 +5,7 @@ from .text_to_children import text_to_children
 def code_block_to_node(block: str) -> ParentNode:
     """
     Функция для преобразования блока с кодом в ParentNode
-    c информацией о языку, если она предоставлена
+    c информацией о языке, если она предоставлена
     """
     stripped_block = block[3:-3]
     lines = stripped_block.split("\n")
@@ -47,6 +47,6 @@ def ol_block_to_node(block: str) -> ParentNode:
     children = []
     lines = block.split("\n")
     for line in lines:
-        text = line.split(" ", 1)[1]
+        text = line.split(" ", 1)[1] #Отделение нумерации от текста
         children.append(ParentNode("li", text_to_children(text)))
     return ParentNode("ol", children)
