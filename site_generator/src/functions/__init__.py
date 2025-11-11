@@ -6,3 +6,6 @@ from .block_to_block_type import *
 from .markdown_to_htmlnode import *
 from .text_to_children import *
 from .block_to_node import *
+from .copy_directory_contents import *
+from .extract_title import *
+from .generate_page import *
